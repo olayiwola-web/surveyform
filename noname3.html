@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;">
+    <form id="questionnaire-form" action="send_email.php" method="post" style="background-color: #ffffff; border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); max-width: 500px; padding: 20px; width: 100%;">
+
+
+        <div class="question begin" style="display: none;">
+            <label for="full_name" style="display: block; font-weight: bold; margin-bottom: 5px;">Full Name:</label>
+            <input type="text" name="full_name" id="full_name" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+
+            <label for="full_name" style="display: block; font-weight: bold; margin-bottom: 5px;">Full Name:</label>
+            <input type="text" name="full_name" id="full_name" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+        </div>
+        <div class="question begin" style="display: none;">
+		    <label for="account_type" style="display: block; font-weight: bold; margin-bottom: 5px;">Type of Account to Open:</label>
+		    <select name="account_type" id="account_type" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an account type</option>
+		        <option value="investment">Investment Account</option>
+		        <option value="savings">Savings Account</option>
+		        <option value="brokerage">Brokerage Account</option>
+		    </select>
+		</div>
+		
+		
+		
+		<!-- INVESTMENT ACCOUNT -->
+		<div class="question typeA" style="display: none;">
+		    <label for="investment_amount" style="display: block; font-weight: bold; margin-bottom: 5px;">What amount would you like to invest?</label>
+		    <input type="number" name="investment_amount" id="investment_amount" class="typeAInps"  required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		</div>
+		
+		<div class="question typeA" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">What investment strategy would you like to use?</label>
+		    <select name="investment_strategy" id="investment_strategy" class="typeAInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an investment strategy</option>
+		        <option value="aggressive">Aggressive</option>
+		        <option value="balanced">Balanced</option>
+		        <option value="conservative">Conservative</option>
+		    </select>
+		</div>
+		
+		<div class="question typeA" style="display: none;">
+		    <label for="investment_term" style="display: block; font-weight: bold; margin-bottom: 5px;">What investment term do you prefer?</label>
+		    <select name="investment_term" id="investment_term" class="typeAInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an investment term</option>
+		        <option value="short_term">Short term (1-3 years)</option>
+		        <option value="medium_term">Medium term (3-5 years)</option>
+		        <option value="long_term">Long term (5+ years)</option>
+		    </select>
+		</div>
+		
+		<div class="question typeA" style="display: none;">
+		    <label for="investment_risk" style="display: block; font-weight: bold; margin-bottom: 5px;">4: What is your risk tolerance level?</label>
+		    <select name="investment_risk" id="investment_risk" class="typeAInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select your risk tolerance level</option>
+		        <option value="low">Low risk</option>
+		        <option value="medium">Medium risk</option>
+		        <option value="high">High risk</option>
+		    </select>
+		</div>
+		
+	
+
+		<!-- SAVINGS ACCOUNT-->
+		<!--1-->
+		<div class="question typeB" style="display: none;">
+			<label for="opening_type" style="display: block; font-weight: bold; margin-bottom: 5px;">How are you opening the account?</label>
+			<select name="investment_strategy" id="opening_type" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+				<option value="">Please select an opening account type</option>
+				<option value="individual">Individual</option>
+				<option value="joint_account">Joint Account</option>
+			</select>
+		</div>
+		
+		<!--2-->
+		<div class="question typeB" style="display: none;">
+			<label for="savings_full_name" style="display: block; font-weight: bold; margin-bottom: 5px;">Full Name:</label>
+			<input type="text" name="savings_full_name" id="savings_full_name" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		
+		    <label for="address" style="display: block; font-weight: bold; margin-bottom: 5px;">Address:</label>
+		    <input type="text" name="address" id="address" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		    
+		    <label for="phone_number" style="display: block; font-weight: bold; margin-bottom: 5px;">Phone Number:</label>
+		    <input type="number" name="phone_number" id="phone_number" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		</div>
+		
+		
+		<!--3-->
+		<div class="question typeB" style="display: none;">
+		    <label for="dob" style="display: block; font-weight: bold; margin-bottom: 5px;">Date Of Birth:</label>
+		    <input type="date" name="dob" id="dob" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		</div>
+		
+		
+		<!--4-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">Do you have a valid government-issued identification document such as a driver's license, passport or state ID?</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--5-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">What is your employment status and income range?</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--6-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">What is the initial deposit amount you would like to make to open the account?</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--7-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">What is the source of funds for the initial deposit? (e.g. cash, check, transfer from another account)</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--8-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">Do you want to set up any automatic transfers or direct deposits into the account?</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--9-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">What is your primary reason for opening this savings account? (e.g. emergency fund, short-term savings goal, long-term savings goal)</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+		<!--10-->
+		<div class="question typeB" style="display: none;">
+		    <label for="investment_strategy" style="display: block; font-weight: bold; margin-bottom: 5px;">Have you read and understood the terms and conditions of the account, including interest rates, fees, and any restrictions on withdrawals?</label>
+		    <select name="id_document" id="id_document" class="typeBInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select an Identification document type</option>
+		        <option value="driver_license">Driver's License</option>
+		        <option value="passport">Passport</option>
+		        <option value="state_id">State Id</option>
+		    </select>
+		</div>
+		
+
+
+
+
+		<!-- BROKERAGE ACCOUNT-->
+		<!--1-->
+		<div class="question typeC" style="display: none;">
+		    <label for="investment_term" style="display: block; font-weight: bold; margin-bottom: 5px;">Investment Objective: What is your investment objective? Are you looking to generate income, grow your investments, or both?</label>
+		    <select name="investment_term" id="investment_term" class="typeCInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select...</option>
+		        <option value="a">A</option>
+		        <option value="b">B</option>
+		    </select>
+		</div>
+		
+		<!--2-->
+		<div class="question typeC" style="display: none;">
+		    <label for="investment_term" style="display: block; font-weight: bold; margin-bottom: 5px;">Investment Time Horizon: What is your investment time horizon? Are you looking to invest for the short-term or the long-term?</label>
+		    <select name="investment_term" id="investment_term" class="typeCInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select...</option>
+		        <option value="a">A</option>
+		        <option value="b">B</option>
+		    </select>
+		</div>
+		
+		<!--3-->
+		<div class="question typeC" style="display: none;">
+		    <label for="investment_term" style="display: block; font-weight: bold; margin-bottom: 5px;">What is your risk tolerance? How comfortable are you with the possibility of losing money in exchange for potentially higher returns?</label>
+		    <select name="investment_term" id="investment_term" class="typeCInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select...</option>
+		        <option value="a">A</option>
+		        <option value="b">B</option>
+		    </select>
+		</div>
+		
+		<!--4-->
+		<div class="question typeC" style="display: none;">
+		    <label for="investment_term" style="display: block; font-weight: bold; margin-bottom: 5px;">4: Investment Experience: What is your investment experience? Have you invested in stocks, bonds, or other securities before? If so, for how long?</label>
+		    <select name="investment_term" id="investment_term" class="typeCInps" required style="border: 1px solid #ccc; border-radius: 3px; display: block; font-size: 16px; padding: 8px 12px; width: 95%;">
+		        <option value="">Please select...</option>
+		        <option value="a">A</option>
+		        <option value="b">B</option>
+		    </select>
+		</div>
+		
+
+
+
+        <!-- Add more questions here -->
+        <div class="buttons" style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button type="button" id="previous" style="background-color: #4285f4; border: none; border-radius: 3px; color: #ffffff; cursor: pointer; font-size: 16px; padding: 10px 20px; text-align: center; text-decoration: none;">Previous</button>
+            <button type="button" id="next" style="background-color: #4285f4; border: none; border-radius: 3px; color: #ffffff; cursor: pointer; font-size: 16px; padding: 10px 20px; text-align: center; text-decoration: none;">Next</button>
+        </div>
+    </form>
+    
+   <script type="text/javascript">
+		const questions = document.querySelectorAll(".question");
+		const questionsBegin = document.querySelectorAll(".question.begin");
+		const questionsTypeA = document.querySelectorAll(".question.typeA");
+		const questionsTypeB = document.querySelectorAll(".question.typeB");
+		const questionsTypeC = document.querySelectorAll(".question.typeC");
+		
+		//all inputs/selects
+		const inpsA = document.querySelectorAll(".typeAInps")
+		const inpsB = document.querySelectorAll(".typeBInps")
+		const inpsC = document.querySelectorAll(".typeCInps")
+		
+		
+		const questionType = document.getElementById("account_type")
+		
+		const prevBtn = document.getElementById("previous");
+		const nextBtn = document.getElementById("next");
+		let current = 0;
+		let currentTypeA = -1
+		let currentTypeB = -1
+		let currentTypeC = -1
+		window.onload = function(){
+			questions[current].style.display = "block";
+			prevBtn.style.display = "none";
+		}
+		nextBtn.addEventListener("click", function () {
+			if (current == questions.length - 1) {
+				document.getElementById("questionnaire-form").submit(); // 🤷🏾‍♂️
+			}else {
+				if(current < questionsBegin.length -1){
+					questions[current].style.display = "none";
+					current++;
+					questions[current].style.display = "block";
+				}else if(questionType.value == "investment"){
+					eraseInps(inpsB, inpsC)
+					// for first question in type A
+					if(currentTypeA < 0){
+						questions[current].style.display = "none";
+						questionsTypeA[0].style.display = "block";
+						currentTypeA++
+					}else if(currentTypeA < questionsTypeA.length -1){ //others
+						questionsTypeA[currentTypeA].style.display = "none";
+						currentTypeA++
+						questionsTypeA[currentTypeA].style.display = "block";
+					
+					}else{
+						document.getElementById("questionnaire-form").submit();
+					}
+					
+				}else if(questionType.value == "savings"){
+					eraseInps(inpsA, inpsC)
+					if(currentTypeB < 0){
+						questions[current].style.display = "none";
+						questionsTypeB[0].style.display = "block";
+						currentTypeB++;
+					}else if(currentTypeB < questionsTypeB.length -1){
+						questionsTypeB[currentTypeB].style.display = "none";
+						currentTypeB++;
+						questionsTypeB[currentTypeB].style.display = "block";
+					}else{
+						document.getElementById("questionnaire-form").submit();
+					}
+				
+				}else if(questionType.value == "brokerage"){
+					eraseInps(inpsA, inpsB)
+					if(currentTypeC < 0){
+						questions[current].style.display = "none";
+						questionsTypeC[0].style.display = "block";
+						currentTypeC++;
+					}else if(currentTypeC < questionsTypeC.length -1){
+						questionsTypeC[currentTypeC].style.display = "none";
+						currentTypeC++;
+						questionsTypeC[currentTypeC].style.display = "block";
+					}else{
+						document.getElementById("questionnaire-form").submit();
+					}
+				}
+			}
+			if (currentTypeA == questionsTypeA.length - 1
+			|| currentTypeB == questionsTypeB.length - 1
+			|| currentTypeC == questionsTypeC.length - 1){
+				nextBtn.textContent = "Submit";
+			} else {
+				nextBtn.textContent = "Next";
+			}	
+			prevBtn.style.display = "inline";
+		})
+		
+		prevBtn.addEventListener("click", function () {
+			nextBtn.textContent = "Next";
+			if(questionType.value == "investment"){
+				if(current == questionsBegin.length - 1 && questionsBegin[current].style.display == "block"){
+					questions[current].style.display = "none";
+					current--
+					questions[current].style.display = "block";
+				}
+				else if(currentTypeA == 0){
+					questionsTypeA[0].style.display = "none";
+					questions[current].style.display = "block";
+					currentTypeA--
+					//alert(current)
+				}
+				else if(currentTypeA < questionsTypeA.length && currentTypeA > 0){
+					questionsTypeA[currentTypeA].style.display = "none";
+					currentTypeA--
+					questionsTypeA[currentTypeA].style.display = "block";
+				}
+			}else if(questionType.value == "savings"){
+				if(current == questionsBegin.length - 1 && questionsBegin[current].style.display == "block"){
+					questions[current].style.display = "none";
+					current--
+					questions[current].style.display = "block";
+				}
+				else if(currentTypeB == 0){
+					questionsTypeB[0].style.display = "none";
+					questions[current].style.display = "block";
+					currentTypeB--
+				}
+				else if(currentTypeB < questionsTypeB.length && currentTypeB > 0){
+					questionsTypeB[currentTypeB].style.display = "none";
+					currentTypeB--
+					questionsTypeB[currentTypeB].style.display = "block";
+				}
+			}else if(questionType.value == "brokerage"){
+				if(current == questionsBegin.length - 1 && questionsBegin[current].style.display == "block"){
+					questions[current].style.display = "none";
+					current--
+					questions[current].style.display = "block";
+				}
+				else if(currentTypeC == 0){
+					questionsTypeC[0].style.display = "none";
+					questions[current].style.display = "block";
+					currentTypeC--
+				}
+				else if(currentTypeC < questionsTypeC.length && currentTypeC > 0){
+					questionsTypeC[currentTypeC].style.display = "none";
+					currentTypeC--
+					questionsTypeC[currentTypeC].style.display = "block";
+				}
+			}else{
+				questions[current].style.display = "none";
+				current--
+				questions[current].style.display = "block";
+			}
+			
+			
+			if (current == 0) {
+				prevBtn.style.display = "none";
+			}
+		});
+		questionType.onchange = () => {
+			if(questionType.value == "investment"){
+				
+			}else if(questionType.value == "savings"){
+				
+			}else if(questionType.value == "brokerage"){
+				
+			}
+		}
+		function eraseInps(type1, type2){
+			for(quests in type1){
+				type1[quests].value = ""
+			}
+			for(quests in type2){
+				type2[quests].value = ""
+			}
+			
+		}
+		function addQuestion(){
+			
+		}
+		function removeQuestion(){
+		
+		}
+   </script>
+</body>
+</html>
