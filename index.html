@@ -276,7 +276,9 @@
 						questionsTypeA[currentTypeA].style.display = "block";
 					
 					}else{
-						document.getElementById("questionnaire-form").submit();
+						if(validate(inpsA)){
+							document.getElementById("questionnaire-form").submit()
+						}
 					}
 					
 				}else if(questionType.value == "savings"){
@@ -290,7 +292,9 @@
 						currentTypeB++;
 						questionsTypeB[currentTypeB].style.display = "block";
 					}else{
-						document.getElementById("questionnaire-form").submit();
+						if(validate(inpsB)){
+							document.getElementById("questionnaire-form").submit()
+						}
 					}
 				
 				}else if(questionType.value == "brokerage"){
@@ -304,7 +308,9 @@
 						currentTypeC++;
 						questionsTypeC[currentTypeC].style.display = "block";
 					}else{
-						document.getElementById("questionnaire-form").submit();
+						if(validate(inpsC)){
+							document.getElementById("questionnaire-form").submit()
+						}
 					}
 				}
 			}
@@ -396,13 +402,24 @@
 			for(quests in type2){
 				type2[quests].value = ""
 			}
-			
 		}
-		function addQuestion(){
-			
-		}
-		function removeQuestion(){
-		
+		function validate(inps){
+				let totalQ = 0
+				for(i in inps){
+					if(inps[i].value !== ""){
+						totalQ++
+					}else{
+					//...
+						return false;
+					}
+					
+					if(totalQ == inps.length){
+						return true;
+					}
+					
+				//}
+				
+			}
 		}
    </script>
 </body>
